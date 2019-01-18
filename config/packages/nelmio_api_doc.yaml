@@ -1,0 +1,22 @@
+nelmio_api_doc:
+    documentation:
+        consumes:
+        - application/x-www-form-urlencoded
+        info:
+            title: Ready4s
+            description: Ready4s
+            version: 1.0.0
+        securityDefinitions:
+            api_key:
+                type: apiKey
+                name: X-AUTH-TOKEN
+                in: header
+        security:
+        - api_key: []
+        request_format:
+            formats:
+                json: 'application/json'
+
+    areas: # to filter documented areas
+        path_patterns:
+        - ^/(?!/doc$) # Accepts routes under /api except /api/doc
